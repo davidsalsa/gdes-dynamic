@@ -119,7 +119,7 @@ public class FSM_Ghost : MonoBehaviour
     
     private void UpdateAttackState()
     {
-        //TODO: Hurt the player with var damage
+        player.GetComponent<PlayerMovement>().Respawn();
         _currentState = FSMState.Respawn;
     }
     

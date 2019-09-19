@@ -59,4 +59,9 @@ public class PlayerMovement : MonoBehaviour
         equipableObject.transform.position = localTransform.position;
         equipableObject.transform.Translate(new Vector3(0.5f, 0, 0.8f));
     }
+
+    public void Respawn()
+    {
+        transform.position = new Vector3(0f, 1.5f, 0f);
+    }
 }
