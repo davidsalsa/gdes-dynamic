@@ -49,10 +49,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void EquipItem(GameObject equipableObject)
     {
+        if (transform.childCount > 0)
+        {
+            transform.GetChild(0).parent = null;
+        }
+
         var localTransform = transform;
         equipableObject.transform.parent = localTransform;
         equipableObject.transform.position = localTransform.position;
         equipableObject.transform.Translate(new Vector3(0.5f, 0, 0.8f));
-        equipableObject.transform.Rotate(70, 0, 0);
     }
 }
