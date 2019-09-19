@@ -132,5 +132,7 @@ public class FSM_Ghost : MonoBehaviour
     {
         gameObject.SetActive(false);
         transform.position = new Vector3(Random.Range(-6, 6), 0.5f, Random.Range(-6, 6));
+        gameObject.SetActive(true);
+        _currentState = FSMState.Hover;
     }
 }
