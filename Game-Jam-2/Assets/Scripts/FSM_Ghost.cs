@@ -119,7 +119,7 @@ public class FSM_Ghost : MonoBehaviour
     
     private void UpdateAttackState()
     {
-        //TODO: Hurt the player with var damage
+        player.GetComponent<PlayerMovement>().Respawn();
         _currentState = FSMState.Respawn;
     }
     
@@ -132,5 +132,7 @@ public class FSM_Ghost : MonoBehaviour
     {
         gameObject.SetActive(false);
         transform.position = new Vector3(Random.Range(-6, 6), 0.5f, Random.Range(-6, 6));
+        gameObject.SetActive(true);
+        _currentState = FSMState.Hover;
     }
 }
