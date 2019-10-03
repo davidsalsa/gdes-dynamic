@@ -129,6 +129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848abe17e227e1a42bcdced94949e8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverFrequency: 0.5
-  hoverAmplitude: 0.5
-  maxDistance: 50
+  hoverFrequency: 2
+  hoverAmplitude: 2
+  maxDistance: 400
