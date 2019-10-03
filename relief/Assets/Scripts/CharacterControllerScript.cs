@@ -17,6 +17,7 @@ public class CharacterControllerScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         openDoor.SetActive(false);
         closedDoor.SetActive(true);
+        nrPickedUp = 0;
     }
 
     // Update is called once per frame
@@ -32,15 +33,18 @@ public class CharacterControllerScript : MonoBehaviour
         if(other.tag == "Collectible")
         {
             nrPickedUp++;
-            Destroy(other);
         }
-        if(other == closedDoor)
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject == closedDoor)
         {
             if (checkObjectiveCleared())
             {
                 closedDoor.SetActive(false);
                 openDoor.SetActive(true);
-            }   
+            }
         }
     }
 
